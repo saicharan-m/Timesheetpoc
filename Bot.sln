@@ -22,17 +22,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messages", "messages", "{F4D9DF3B-F4E4-4E19-9053-3AF71A3189FA}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Documents\GitHub\BotService\messages\EchoDialog.csx = ..\..\Documents\GitHub\BotService\messages\EchoDialog.csx
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "messages", "messages\messages.csproj", "{AA0B02CC-E1B8-4F67-960E-2D3741536CC2}"
+ProjectSection(SolutionItems) = preProject
+		messages\EchoDialog.csx = messages\EchoDialog.csx
 		messages\function.json = messages\function.json
-		..\..\Documents\GitHub\BotService\messages\Message.csx = ..\..\Documents\GitHub\BotService\messages\Message.csx
+		messages\Message.csx = messages\Message.csx
 		messages\project.json = messages\project.json
 		messages\project.lock.json = messages\project.lock.json
 		messages\run.csx = messages\run.csx
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "messages", "messages\messages.csproj", "{AA0B02CC-E1B8-4F67-960E-2D3741536CC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

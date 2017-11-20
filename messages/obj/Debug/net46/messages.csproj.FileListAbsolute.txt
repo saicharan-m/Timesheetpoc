@@ -78,3 +78,4 @@ C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messag
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.pdb
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\EntityFramework.SqlServer.dll
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\EntityFramework.dll
+C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.csprojResolveAssemblyReference.cache
