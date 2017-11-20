@@ -20,6 +20,20 @@
           "lib/net40/Chronic.dll": {}
         }
       },
+      "EntityFramework/6.1.3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -81,12 +95,13 @@
           "lib/net40/Microsoft.Azure.KeyVault.Core.dll": {}
         }
       },
-      "Microsoft.Bot.Builder/3.9.0": {
+      "Microsoft.Bot.Builder/3.11.0": {
         "type": "package",
         "dependencies": {
           "Autofac": "3.5.2",
           "Chronic.Signed": "0.3.2",
           "Microsoft.AspNet.WebAPI.Core": "5.2.3",
+          "Microsoft.Bot.Connector": "3.11.0",
           "Microsoft.IdentityModel.Protocol.Extensions": "1.0.4.403061554",
           "Microsoft.Rest.ClientRuntime": "2.3.2",
           "Newtonsoft.Json": "8.0.3",
@@ -94,13 +109,11 @@
         },
         "compile": {
           "lib/net46/Microsoft.Bot.Builder.Autofac.dll": {},
-          "lib/net46/Microsoft.Bot.Builder.dll": {},
-          "lib/net46/Microsoft.Bot.Connector.dll": {}
+          "lib/net46/Microsoft.Bot.Builder.dll": {}
         },
         "runtime": {
           "lib/net46/Microsoft.Bot.Builder.Autofac.dll": {},
-          "lib/net46/Microsoft.Bot.Builder.dll": {},
-          "lib/net46/Microsoft.Bot.Connector.dll": {}
+          "lib/net46/Microsoft.Bot.Builder.dll": {}
         },
         "resource": {
           "lib/net46/ar/Microsoft.Bot.Builder.resources.dll": {
@@ -144,11 +157,12 @@
           }
         }
       },
-      "Microsoft.Bot.Builder.Azure/3.2.3": {
+      "Microsoft.Bot.Builder.Azure/3.2.4": {
         "type": "package",
         "dependencies": {
+          "EntityFramework": "6.1.3",
           "Microsoft.Azure.DocumentDB": "1.11.0",
-          "Microsoft.Bot.Builder": "3.9.0",
+          "Microsoft.Bot.Builder": "3.11.0",
           "Microsoft.Bot.Builder.History": "3.0.6",
           "Newtonsoft.Json": "8.0.3",
           "WindowsAzure.Storage": "7.2.1"
@@ -172,7 +186,24 @@
           "lib/net46/Microsoft.Bot.Builder.History.dll": {}
         }
       },
-      "Microsoft.Data.Edm/5.6.4": {
+      "Microsoft.Bot.Connector/3.11.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.3",
+          "Microsoft.AspNet.WebApi.Core": "5.2.3",
+          "Microsoft.IdentityModel.Protocol.Extensions": "1.0.4.403061554",
+          "Microsoft.Rest.ClientRuntime": "2.3.2",
+          "Newtonsoft.Json": "8.0.3",
+          "System.IdentityModel.Tokens.Jwt": "[4.0.4.403061554, 5.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Bot.Connector.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Bot.Connector.dll": {}
+        }
+      },
+      "Microsoft.Data.Edm/5.8.2": {
         "type": "package",
         "compile": {
           "lib/net40/Microsoft.Data.Edm.dll": {}
@@ -210,11 +241,11 @@
           }
         }
       },
-      "Microsoft.Data.OData/5.6.4": {
+      "Microsoft.Data.OData/5.8.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Data.Edm": "[5.6.4]",
-          "System.Spatial": "[5.6.4]"
+          "Microsoft.Data.Edm": "[5.8.2]",
+          "System.Spatial": "[5.8.2]"
         },
         "compile": {
           "lib/net40/Microsoft.Data.OData.dll": {}
@@ -252,10 +283,14 @@
           }
         }
       },
-      "Microsoft.Data.Services.Client/5.6.4": {
+      "Microsoft.Data.Services.Client/5.8.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Data.OData": "[5.6.4]"
+          "Microsoft.Data.OData": "[5.8.2]",
+          "System.ComponentModel.EventBasedAsync": "4.0.11",
+          "System.Dynamic.Runtime": "4.0.0",
+          "System.Linq.Queryable": "4.0.0",
+          "System.Net.Requests": "4.0.11"
         },
         "compile": {
           "lib/net40/Microsoft.Data.Services.Client.dll": {}
@@ -335,6 +370,27 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "System.ComponentModel.EventBasedAsync/4.0.11": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Dynamic.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/4.0.4.403061554": {
         "type": "package",
         "compile": {
@@ -344,7 +400,38 @@
           "lib/net45/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
-      "System.Spatial/5.6.4": {
+      "System.Linq.Queryable/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Net.Requests/4.0.11": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "ref/net46/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net46/_._": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Spatial/5.8.2": {
         "type": "package",
         "compile": {
           "lib/net40/System.Spatial.dll": {}
@@ -382,22 +469,34 @@
           }
         }
       },
-      "WindowsAzure.Storage/7.2.1": {
+      "System.Text.RegularExpressions/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "WindowsAzure.Storage/8.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Azure.KeyVault.Core": "1.0.0",
-          "Microsoft.Data.OData": "5.6.4",
-          "Microsoft.Data.Services.Client": "5.6.4",
+          "Microsoft.Data.OData": "5.8.2",
+          "Microsoft.Data.Services.Client": "5.8.2",
           "Newtonsoft.Json": "6.0.8"
         },
         "frameworkAssemblies": [
           "System.Data"
         ],
         "compile": {
-          "lib/net40/Microsoft.WindowsAzure.Storage.dll": {}
+          "lib/net45/Microsoft.WindowsAzure.Storage.dll": {}
         },
         "runtime": {
-          "lib/net40/Microsoft.WindowsAzure.Storage.dll": {}
+          "lib/net45/Microsoft.WindowsAzure.Storage.dll": {}
         }
       }
     }
@@ -424,6 +523,33 @@
         "chronic.signed.0.3.2.nupkg.sha512",
         "chronic.signed.nuspec",
         "lib/net40/Chronic.dll"
+      ]
+    },
+    "EntityFramework/6.1.3": {
+      "sha512": "2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw==",
+      "type": "package",
+      "path": "entityframework/6.1.3",
+      "files": [
+        "content/App.config.transform",
+        "content/Web.config.transform",
+        "entityframework.6.1.3.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.3": {
@@ -478,17 +604,15 @@
         "microsoft.azure.keyvault.core.nuspec"
       ]
     },
-    "Microsoft.Bot.Builder/3.9.0": {
-      "sha512": "dFPSLs1A9XIJo7XYbVL5srRC8FqXL/XLGPulDtYK9EzOCVKFlf6F+hWB7ceCV84VdjcF+lPMwAINfQcDlsLUkw==",
+    "Microsoft.Bot.Builder/3.11.0": {
+      "sha512": "moATsDp6m+Zi5rUsjVt4grJBfjtJ3mOXVlQ1d05qey1gEtG5g5VVLyjZFex10HCvZHbShHb3GIQ5cOz0OhaCig==",
       "type": "package",
-      "path": "microsoft.bot.builder/3.9.0",
+      "path": "microsoft.bot.builder/3.11.0",
       "files": [
         "lib/net46/Microsoft.Bot.Builder.Autofac.XML",
         "lib/net46/Microsoft.Bot.Builder.Autofac.dll",
         "lib/net46/Microsoft.Bot.Builder.XML",
         "lib/net46/Microsoft.Bot.Builder.dll",
-        "lib/net46/Microsoft.Bot.Connector.dll",
-        "lib/net46/Microsoft.Bot.Connector.xml",
         "lib/net46/ar/Microsoft.Bot.Builder.resources.dll",
         "lib/net46/cs/Microsoft.Bot.Builder.resources.dll",
         "lib/net46/de-dE/Microsoft.Bot.Builder.resources.dll",
@@ -502,19 +626,19 @@
         "lib/net46/pt-BR/Microsoft.Bot.Builder.resources.dll",
         "lib/net46/ru/Microsoft.Bot.Builder.resources.dll",
         "lib/net46/zh-hans/Microsoft.Bot.Builder.resources.dll",
-        "microsoft.bot.builder.3.9.0.nupkg.sha512",
+        "microsoft.bot.builder.3.11.0.nupkg.sha512",
         "microsoft.bot.builder.nuspec",
         "tools/RView.exe"
       ]
     },
-    "Microsoft.Bot.Builder.Azure/3.2.3": {
-      "sha512": "I2nnW3hsnMXsRH8HBu1kp8RGiJGNKgKGQ438wWpgBlA/vpEI1gtYEvws8iDTktaj6kZ7e5Kii5RTClMediJzEQ==",
+    "Microsoft.Bot.Builder.Azure/3.2.4": {
+      "sha512": "Sls3Vamsed2p/pJO+quG+z2pTrmiJRlZDRD+EvvW2g3LutTtheqvVwiaA6/o5IrAtrrk+k7w1dZdQ/Rpj7jT3A==",
       "type": "package",
-      "path": "microsoft.bot.builder.azure/3.2.3",
+      "path": "microsoft.bot.builder.azure/3.2.4",
       "files": [
         "lib/net46/Microsoft.Bot.Builder.Azure.XML",
         "lib/net46/Microsoft.Bot.Builder.Azure.dll",
-        "microsoft.bot.builder.azure.3.2.3.nupkg.sha512",
+        "microsoft.bot.builder.azure.3.2.4.nupkg.sha512",
         "microsoft.bot.builder.azure.nuspec"
       ]
     },
@@ -529,10 +653,25 @@
         "microsoft.bot.builder.history.nuspec"
       ]
     },
-    "Microsoft.Data.Edm/5.6.4": {
-      "sha512": "I9ea/CEOufddjjyRYIowshdeFj5SIqfWZ5conK/UIaFx2/jJ+PDRhQ5jcJTqTg/ediCa1C22TeRl/MmL9zwBew==",
+    "Microsoft.Bot.Connector/3.11.1": {
+      "sha512": "VHE+broYA2q2DPY6lsCgUccHJX6Y+XuGTXTFlr8p0n6XeGsg7DRTgZEuLJUOCGhCM5tcK6ASMheJtx6A+KVWOA==",
       "type": "package",
-      "path": "microsoft.data.edm/5.6.4",
+      "path": "microsoft.bot.connector/3.11.1",
+      "files": [
+        "lib/net45/Microsoft.Bot.Connector.dll",
+        "lib/net45/Microsoft.Bot.Connector.xml",
+        "lib/netstandard1.6/Microsoft.Bot.Connector.NetCore.XML",
+        "lib/netstandard1.6/Microsoft.Bot.Connector.NetCore.dll",
+        "lib/netstandard1.6/Microsoft.Bot.Connector.dll",
+        "lib/netstandard1.6/Microsoft.Bot.Connector.xml",
+        "microsoft.bot.connector.3.11.1.nupkg.sha512",
+        "microsoft.bot.connector.nuspec"
+      ]
+    },
+    "Microsoft.Data.Edm/5.8.2": {
+      "sha512": "P/d8DxA6MFHroBEn/jW0LMQSIKnsRRibrZtRCLfov2boQfrQ1R1BVgkJ5oIhcQsOm0l4POv+I2ny6RBsclNbOw==",
+      "type": "package",
+      "path": "microsoft.data.edm/5.8.2",
       "files": [
         "lib/net40/Microsoft.Data.Edm.dll",
         "lib/net40/Microsoft.Data.Edm.xml",
@@ -545,6 +684,17 @@
         "lib/net40/ru/Microsoft.Data.Edm.resources.dll",
         "lib/net40/zh-Hans/Microsoft.Data.Edm.resources.dll",
         "lib/net40/zh-Hant/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/Microsoft.Data.Edm.dll",
+        "lib/netstandard1.1/Microsoft.Data.Edm.xml",
+        "lib/netstandard1.1/de/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/es/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/fr/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/it/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/ja/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/ko/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/ru/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/zh-Hans/Microsoft.Data.Edm.resources.dll",
+        "lib/netstandard1.1/zh-Hant/Microsoft.Data.Edm.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.Edm.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.Edm.xml",
         "lib/portable-net40+sl5+wp8+win8+wpa/de/Microsoft.Data.Edm.resources.dll",
@@ -578,14 +728,14 @@
         "lib/sl4/ru/Microsoft.Data.Edm.resources.dll",
         "lib/sl4/zh-Hans/Microsoft.Data.Edm.resources.dll",
         "lib/sl4/zh-Hant/Microsoft.Data.Edm.resources.dll",
-        "microsoft.data.edm.5.6.4.nupkg.sha512",
+        "microsoft.data.edm.5.8.2.nupkg.sha512",
         "microsoft.data.edm.nuspec"
       ]
     },
-    "Microsoft.Data.OData/5.6.4": {
-      "sha512": "Te71LAvjYppmBCLWomHvhVzKes3q8L5tmmDMSyLP7YrJMYG5/Ded8uJgxWWkUX/Vh11ZDpN2WXRByOg+BAHCYw==",
+    "Microsoft.Data.OData/5.8.2": {
+      "sha512": "oEIUtXcRiKogF0yZxA+QdgxoBJ34989qL/5xOSrTfxAhzNJV5Hw6DRdWgUCpeXFMoJUQx7ptbHCN+My/LCQfsg==",
       "type": "package",
-      "path": "microsoft.data.odata/5.6.4",
+      "path": "microsoft.data.odata/5.8.2",
       "files": [
         "lib/net40/Microsoft.Data.OData.dll",
         "lib/net40/Microsoft.Data.OData.xml",
@@ -598,6 +748,17 @@
         "lib/net40/ru/Microsoft.Data.OData.resources.dll",
         "lib/net40/zh-Hans/Microsoft.Data.OData.resources.dll",
         "lib/net40/zh-Hant/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/Microsoft.Data.OData.dll",
+        "lib/netstandard1.1/Microsoft.Data.OData.xml",
+        "lib/netstandard1.1/de/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/es/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/fr/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/it/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/ja/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/ko/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/ru/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/zh-Hans/Microsoft.Data.OData.resources.dll",
+        "lib/netstandard1.1/zh-Hant/Microsoft.Data.OData.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.OData.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.OData.xml",
         "lib/portable-net40+sl5+wp8+win8+wpa/de/Microsoft.Data.OData.resources.dll",
@@ -631,14 +792,14 @@
         "lib/sl4/ru/Microsoft.Data.OData.resources.dll",
         "lib/sl4/zh-Hans/Microsoft.Data.OData.resources.dll",
         "lib/sl4/zh-Hant/Microsoft.Data.OData.resources.dll",
-        "microsoft.data.odata.5.6.4.nupkg.sha512",
+        "microsoft.data.odata.5.8.2.nupkg.sha512",
         "microsoft.data.odata.nuspec"
       ]
     },
-    "Microsoft.Data.Services.Client/5.6.4": {
-      "sha512": "94XNZKwnpHuFAdR70kqNTMBv2ex9m+VVQX8dHknZgtlq+nTlZDgzFmahU0wsBaIqJWc3k8Z+FftQ2Voq9r0NWA==",
+    "Microsoft.Data.Services.Client/5.8.2": {
+      "sha512": "RtTMj1EOQa9nzJGZEb13Z7hW3gjqLsPoeHHD/8PEZ/b+8Wb+UHMxvS7llg0TUki1nwiwcaBfGeQE3zN5IQNYPA==",
       "type": "package",
-      "path": "microsoft.data.services.client/5.6.4",
+      "path": "microsoft.data.services.client/5.8.2",
       "files": [
         "lib/net40/Microsoft.Data.Services.Client.dll",
         "lib/net40/Microsoft.Data.Services.Client.xml",
@@ -651,6 +812,17 @@
         "lib/net40/ru/Microsoft.Data.Services.Client.resources.dll",
         "lib/net40/zh-Hans/Microsoft.Data.Services.Client.resources.dll",
         "lib/net40/zh-Hant/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/Microsoft.Data.Services.Client.dll",
+        "lib/netstandard1.1/Microsoft.Data.Services.Client.xml",
+        "lib/netstandard1.1/de/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/es/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/fr/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/it/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/ja/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/ko/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/ru/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/zh-Hans/Microsoft.Data.Services.Client.resources.dll",
+        "lib/netstandard1.1/zh-Hant/Microsoft.Data.Services.Client.resources.dll",
         "lib/portable-net45+wp8+win8+wpa/Microsoft.Data.Services.Client.dll",
         "lib/portable-net45+wp8+win8+wpa/Microsoft.Data.Services.Client.xml",
         "lib/portable-net45+wp8+win8+wpa/de/Microsoft.Data.Services.Client.resources.dll",
@@ -673,7 +845,7 @@
         "lib/sl4/ru/Microsoft.Data.Services.Client.resources.dll",
         "lib/sl4/zh-Hans/Microsoft.Data.Services.Client.resources.dll",
         "lib/sl4/zh-Hant/Microsoft.Data.Services.Client.resources.dll",
-        "microsoft.data.services.client.5.6.4.nupkg.sha512",
+        "microsoft.data.services.client.5.8.2.nupkg.sha512",
         "microsoft.data.services.client.nuspec"
       ]
     },
@@ -722,6 +894,122 @@
         "tools/install.ps1"
       ]
     },
+    "System.ComponentModel.EventBasedAsync/4.0.11": {
+      "sha512": "Z7SO6vvQIR84daPE4uhaNdef9CjgjDMGYkas8epUhf0U3WGuaGgZ0Mm4QuNycMdbHUY8KEdZrtgxonkAiJaAlA==",
+      "type": "package",
+      "path": "system.componentmodel.eventbasedasync/4.0.11",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.ComponentModel.EventBasedAsync.dll",
+        "lib/netstandard1.3/System.ComponentModel.EventBasedAsync.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.ComponentModel.EventBasedAsync.dll",
+        "ref/netcore50/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/de/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/es/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/fr/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/it/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/ja/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/ko/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/ru/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/System.ComponentModel.EventBasedAsync.dll",
+        "ref/netstandard1.0/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/System.ComponentModel.EventBasedAsync.dll",
+        "ref/netstandard1.3/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.EventBasedAsync.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.EventBasedAsync.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.eventbasedasync.4.0.11.nupkg.sha512",
+        "system.componentmodel.eventbasedasync.nuspec"
+      ]
+    },
+    "System.Dynamic.Runtime/4.0.0": {
+      "sha512": "33os71rQUCLjM5pbhQqCopq9/YcqBHPBQ8WylrzNk3oJmfAR0SFwzZIKJRN2JcrkBYdzC/NtWrYVU8oroyZieA==",
+      "type": "package",
+      "path": "system.dynamic.runtime/4.0.0",
+      "files": [
+        "License.rtf",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/dotnet/System.Dynamic.Runtime.dll",
+        "ref/dotnet/System.Dynamic.Runtime.xml",
+        "ref/dotnet/de/System.Dynamic.Runtime.xml",
+        "ref/dotnet/es/System.Dynamic.Runtime.xml",
+        "ref/dotnet/fr/System.Dynamic.Runtime.xml",
+        "ref/dotnet/it/System.Dynamic.Runtime.xml",
+        "ref/dotnet/ja/System.Dynamic.Runtime.xml",
+        "ref/dotnet/ko/System.Dynamic.Runtime.xml",
+        "ref/dotnet/ru/System.Dynamic.Runtime.xml",
+        "ref/dotnet/zh-hans/System.Dynamic.Runtime.xml",
+        "ref/dotnet/zh-hant/System.Dynamic.Runtime.xml",
+        "ref/net45/_._",
+        "ref/netcore50/System.Dynamic.Runtime.dll",
+        "ref/netcore50/System.Dynamic.Runtime.xml",
+        "ref/netcore50/de/System.Dynamic.Runtime.xml",
+        "ref/netcore50/es/System.Dynamic.Runtime.xml",
+        "ref/netcore50/fr/System.Dynamic.Runtime.xml",
+        "ref/netcore50/it/System.Dynamic.Runtime.xml",
+        "ref/netcore50/ja/System.Dynamic.Runtime.xml",
+        "ref/netcore50/ko/System.Dynamic.Runtime.xml",
+        "ref/netcore50/ru/System.Dynamic.Runtime.xml",
+        "ref/netcore50/zh-hans/System.Dynamic.Runtime.xml",
+        "ref/netcore50/zh-hant/System.Dynamic.Runtime.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "system.dynamic.runtime.4.0.0.nupkg.sha512",
+        "system.dynamic.runtime.nuspec"
+      ]
+    },
     "System.IdentityModel.Tokens.Jwt/4.0.4.403061554": {
       "sha512": "9WVCyFoR8ovKmPkpXz/jvfRYJ9SkJr6bGUlKJSIXZbMzaqDjUVzu7JAetovn+U9mFE4TIzLdfoHCMiU+EkjJaw==",
       "type": "package",
@@ -733,10 +1021,123 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "System.Spatial/5.6.4": {
-      "sha512": "BoXUQ0mHyeAbkR3qlhwXqUFxzJ7rZuFOrvFM/jZRk+S6JLI2JxXRKby6bxuWbmwYv2o/eRPQPbAOvEk5hB2Gmg==",
+    "System.Linq.Queryable/4.0.0": {
+      "sha512": "DIlvCNn3ucFvwMMzXcag4aFnFJ1fdxkQ5NqwJe9Nh7y8ozzhDm07YakQL/yoF3P1dLzY1T2cTpuwbAmVSdXyBA==",
       "type": "package",
-      "path": "system.spatial/5.6.4",
+      "path": "system.linq.queryable/4.0.0",
+      "files": [
+        "lib/dotnet/System.Linq.Queryable.dll",
+        "lib/net45/_._",
+        "lib/netcore50/System.Linq.Queryable.dll",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "ref/dotnet/System.Linq.Queryable.dll",
+        "ref/dotnet/System.Linq.Queryable.xml",
+        "ref/dotnet/de/System.Linq.Queryable.xml",
+        "ref/dotnet/es/System.Linq.Queryable.xml",
+        "ref/dotnet/fr/System.Linq.Queryable.xml",
+        "ref/dotnet/it/System.Linq.Queryable.xml",
+        "ref/dotnet/ja/System.Linq.Queryable.xml",
+        "ref/dotnet/ko/System.Linq.Queryable.xml",
+        "ref/dotnet/ru/System.Linq.Queryable.xml",
+        "ref/dotnet/zh-hans/System.Linq.Queryable.xml",
+        "ref/dotnet/zh-hant/System.Linq.Queryable.xml",
+        "ref/net45/_._",
+        "ref/netcore50/System.Linq.Queryable.dll",
+        "ref/netcore50/System.Linq.Queryable.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "system.linq.queryable.4.0.0.nupkg.sha512",
+        "system.linq.queryable.nuspec"
+      ]
+    },
+    "System.Net.Requests/4.0.11": {
+      "sha512": "vxGt7C0cZixN+VqoSW4Yakc1Y9WknmxauDqzxgpw/FnBdz4kQNN51l4wxdXX5VY1xjqy//+G+4CvJWp1+f+y6Q==",
+      "type": "package",
+      "path": "system.net.requests/4.0.11",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/_._",
+        "ref/netcore50/System.Net.Requests.dll",
+        "ref/netcore50/System.Net.Requests.xml",
+        "ref/netcore50/de/System.Net.Requests.xml",
+        "ref/netcore50/es/System.Net.Requests.xml",
+        "ref/netcore50/fr/System.Net.Requests.xml",
+        "ref/netcore50/it/System.Net.Requests.xml",
+        "ref/netcore50/ja/System.Net.Requests.xml",
+        "ref/netcore50/ko/System.Net.Requests.xml",
+        "ref/netcore50/ru/System.Net.Requests.xml",
+        "ref/netcore50/zh-hans/System.Net.Requests.xml",
+        "ref/netcore50/zh-hant/System.Net.Requests.xml",
+        "ref/netstandard1.0/System.Net.Requests.dll",
+        "ref/netstandard1.0/System.Net.Requests.xml",
+        "ref/netstandard1.0/de/System.Net.Requests.xml",
+        "ref/netstandard1.0/es/System.Net.Requests.xml",
+        "ref/netstandard1.0/fr/System.Net.Requests.xml",
+        "ref/netstandard1.0/it/System.Net.Requests.xml",
+        "ref/netstandard1.0/ja/System.Net.Requests.xml",
+        "ref/netstandard1.0/ko/System.Net.Requests.xml",
+        "ref/netstandard1.0/ru/System.Net.Requests.xml",
+        "ref/netstandard1.0/zh-hans/System.Net.Requests.xml",
+        "ref/netstandard1.0/zh-hant/System.Net.Requests.xml",
+        "ref/netstandard1.1/System.Net.Requests.dll",
+        "ref/netstandard1.1/System.Net.Requests.xml",
+        "ref/netstandard1.1/de/System.Net.Requests.xml",
+        "ref/netstandard1.1/es/System.Net.Requests.xml",
+        "ref/netstandard1.1/fr/System.Net.Requests.xml",
+        "ref/netstandard1.1/it/System.Net.Requests.xml",
+        "ref/netstandard1.1/ja/System.Net.Requests.xml",
+        "ref/netstandard1.1/ko/System.Net.Requests.xml",
+        "ref/netstandard1.1/ru/System.Net.Requests.xml",
+        "ref/netstandard1.1/zh-hans/System.Net.Requests.xml",
+        "ref/netstandard1.1/zh-hant/System.Net.Requests.xml",
+        "ref/netstandard1.3/System.Net.Requests.dll",
+        "ref/netstandard1.3/System.Net.Requests.xml",
+        "ref/netstandard1.3/de/System.Net.Requests.xml",
+        "ref/netstandard1.3/es/System.Net.Requests.xml",
+        "ref/netstandard1.3/fr/System.Net.Requests.xml",
+        "ref/netstandard1.3/it/System.Net.Requests.xml",
+        "ref/netstandard1.3/ja/System.Net.Requests.xml",
+        "ref/netstandard1.3/ko/System.Net.Requests.xml",
+        "ref/netstandard1.3/ru/System.Net.Requests.xml",
+        "ref/netstandard1.3/zh-hans/System.Net.Requests.xml",
+        "ref/netstandard1.3/zh-hant/System.Net.Requests.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll",
+        "runtimes/win/lib/net46/_._",
+        "runtimes/win/lib/netstandard1.3/System.Net.Requests.dll",
+        "system.net.requests.4.0.11.nupkg.sha512",
+        "system.net.requests.nuspec"
+      ]
+    },
+    "System.Spatial/5.8.2": {
+      "sha512": "0RfZZJ8RlrfjoBPAF6pczX4Nd2kyLM8EX1PCP5Rqs/jOhJBUPYhpXjIsVAYN7kocj9IJ9XoJWAxWgXIDtJY2Ag==",
+      "type": "package",
+      "path": "system.spatial/5.8.2",
       "files": [
         "lib/net40/System.Spatial.dll",
         "lib/net40/System.Spatial.xml",
@@ -749,6 +1150,17 @@
         "lib/net40/ru/System.Spatial.resources.dll",
         "lib/net40/zh-Hans/System.Spatial.resources.dll",
         "lib/net40/zh-Hant/System.Spatial.resources.dll",
+        "lib/netstandard1.1/System.Spatial.dll",
+        "lib/netstandard1.1/System.Spatial.xml",
+        "lib/netstandard1.1/de/System.Spatial.resources.dll",
+        "lib/netstandard1.1/es/System.Spatial.resources.dll",
+        "lib/netstandard1.1/fr/System.Spatial.resources.dll",
+        "lib/netstandard1.1/it/System.Spatial.resources.dll",
+        "lib/netstandard1.1/ja/System.Spatial.resources.dll",
+        "lib/netstandard1.1/ko/System.Spatial.resources.dll",
+        "lib/netstandard1.1/ru/System.Spatial.resources.dll",
+        "lib/netstandard1.1/zh-Hans/System.Spatial.resources.dll",
+        "lib/netstandard1.1/zh-Hant/System.Spatial.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/System.Spatial.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/System.Spatial.xml",
         "lib/portable-net40+sl5+wp8+win8+wpa/de/System.Spatial.resources.dll",
@@ -782,18 +1194,102 @@
         "lib/sl4/ru/System.Spatial.resources.dll",
         "lib/sl4/zh-Hans/System.Spatial.resources.dll",
         "lib/sl4/zh-Hant/System.Spatial.resources.dll",
-        "system.spatial.5.6.4.nupkg.sha512",
+        "system.spatial.5.8.2.nupkg.sha512",
         "system.spatial.nuspec"
       ]
     },
-    "WindowsAzure.Storage/7.2.1": {
-      "sha512": "PWSqaIFaUvi2DgHeDotoRtv1new1m3jfwsb+T6nZfpVdYYIzyYUOFPBxJ0f8yHUq8C9Na8avNc08YsdgDIoTZg==",
+    "System.Text.RegularExpressions/4.3.0": {
+      "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
       "type": "package",
-      "path": "windowsazure.storage/7.2.1",
+      "path": "system.text.regularexpressions/4.3.0",
       "files": [
-        "lib/net40/Microsoft.WindowsAzure.Storage.dll",
-        "lib/net40/Microsoft.WindowsAzure.Storage.pdb",
-        "lib/net40/Microsoft.WindowsAzure.Storage.xml",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net463/System.Text.RegularExpressions.dll",
+        "lib/netcore50/System.Text.RegularExpressions.dll",
+        "lib/netstandard1.6/System.Text.RegularExpressions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net463/System.Text.RegularExpressions.dll",
+        "ref/netcore50/System.Text.RegularExpressions.dll",
+        "ref/netcore50/System.Text.RegularExpressions.xml",
+        "ref/netcore50/de/System.Text.RegularExpressions.xml",
+        "ref/netcore50/es/System.Text.RegularExpressions.xml",
+        "ref/netcore50/fr/System.Text.RegularExpressions.xml",
+        "ref/netcore50/it/System.Text.RegularExpressions.xml",
+        "ref/netcore50/ja/System.Text.RegularExpressions.xml",
+        "ref/netcore50/ko/System.Text.RegularExpressions.xml",
+        "ref/netcore50/ru/System.Text.RegularExpressions.xml",
+        "ref/netcore50/zh-hans/System.Text.RegularExpressions.xml",
+        "ref/netcore50/zh-hant/System.Text.RegularExpressions.xml",
+        "ref/netcoreapp1.1/System.Text.RegularExpressions.dll",
+        "ref/netstandard1.0/System.Text.RegularExpressions.dll",
+        "ref/netstandard1.0/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/de/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/es/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/fr/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/it/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/ja/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/ko/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/ru/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/zh-hans/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.0/zh-hant/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/System.Text.RegularExpressions.dll",
+        "ref/netstandard1.3/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/de/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/es/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/fr/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/it/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/ja/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/ko/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/ru/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/zh-hans/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.3/zh-hant/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/System.Text.RegularExpressions.dll",
+        "ref/netstandard1.6/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/de/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/es/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/fr/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/it/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/ja/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/ko/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/ru/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/zh-hans/System.Text.RegularExpressions.xml",
+        "ref/netstandard1.6/zh-hant/System.Text.RegularExpressions.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.text.regularexpressions.4.3.0.nupkg.sha512",
+        "system.text.regularexpressions.nuspec"
+      ]
+    },
+    "WindowsAzure.Storage/8.6.0": {
+      "sha512": "uzcmNJwki+yMxEGU8QcnVTKJcM/L5E4oCqoZCQ9uhPfNvKT4CxcGe2qXho7jMRNuZmz69uvcbv7yGv0oMEAOxQ==",
+      "type": "package",
+      "path": "windowsazure.storage/8.6.0",
+      "files": [
+        "lib/net45/Microsoft.WindowsAzure.Storage.dll",
+        "lib/net45/Microsoft.WindowsAzure.Storage.pdb",
+        "lib/net45/Microsoft.WindowsAzure.Storage.xml",
+        "lib/netstandard1.0/Microsoft.WindowsAzure.Storage.dll",
+        "lib/netstandard1.0/Microsoft.WindowsAzure.Storage.pdb",
         "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll",
         "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.pdb",
         "lib/win8/Microsoft.WindowsAzure.Storage.dll",
@@ -802,14 +1298,18 @@
         "lib/wp8/Microsoft.WindowsAzure.Storage.pdb",
         "lib/wpa/Microsoft.WindowsAzure.Storage.dll",
         "lib/wpa/Microsoft.WindowsAzure.Storage.pdb",
-        "windowsazure.storage.7.2.1.nupkg.sha512",
+        "windowsazure.storage.8.6.0.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6": [
-      "Microsoft.Bot.Builder.Azure >= 3.2.3"
+      "Microsoft.Bot.Builder >= 3.11.0",
+      "Microsoft.Bot.Builder.Azure >= 3.2.4",
+      "Microsoft.Bot.Connector >= 3.11.1",
+      "System.Text.RegularExpressions >= 4.3.0",
+      "WindowsAzure.Storage >= 8.6.0"
     ]
   },
   "packageFolders": {
@@ -858,7 +1358,23 @@
         "dependencies": {
           "Microsoft.Bot.Builder.Azure": {
             "target": "Package",
-            "version": "3.2.3"
+            "version": "3.2.4"
+          },
+          "Microsoft.Bot.Builder": {
+            "target": "Package",
+            "version": "3.11.0"
+          },
+          "System.Text.RegularExpressions": {
+            "target": "Package",
+            "version": "4.3.0"
+          },
+          "WindowsAzure.Storage": {
+            "target": "Package",
+            "version": "8.6.0"
+          },
+          "Microsoft.Bot.Connector": {
+            "target": "Package",
+            "version": "3.11.1"
           }
         }
       }

@@ -71,9 +71,10 @@ C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\ru\Sys
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\zh-Hans\System.Spatial.resources.dll
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\zh-Hant\System.Spatial.resources.dll
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\Microsoft.WindowsAzure.Storage.dll
-C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.csprojResolveAssemblyReference.cache
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.csproj.CoreCompileInputs.cache
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.AssemblyInfoInputs.cache
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.AssemblyInfo.cs
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.dll
 C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\obj\Debug\net46\messages.pdb
+C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\EntityFramework.SqlServer.dll
+C:\Users\SaiCharan\Documents\GitHub\Timesheetpoc\messages\bin\Debug\net46\EntityFramework.dll
